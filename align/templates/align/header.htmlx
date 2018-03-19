@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+		{% load staticfiles %}
+		<link rel="shortcut icon" type="image/png" href="{% static 'align/img/Hamster_black.png' %}">
+		<title>Style test</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="{% static 'align/css/bootstrap.min.css' %}" type = "text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body class="body">		
+		<div class="container">
+    		<div class="row">
+         		<div id="sidebar" class="col-md-2 sidebar no-float">
+        			<ul class="nav nav-pills nav-stacked">
+        				<li><a href='{% url 'choose' %}'><img src="{% static 'align/img/Hamster_white.png' %}" alt="Return to main page" class="logo"/></a></li>
+        				<li><a href='{% url 'retrieve' %}'><h5>Retrieve Job</h5></a></li>        				
+						<li><a href='{% url 'tutorial' %}'><h5>Tutorial</h5></a></li>
+						<li><a href='{% url 'programmes' %}'><h5>Programmes</h5></a></li>
+						<li><a href='{% url 'about' %}'><h5>About</h5></a></li>
+						<li><a href='admin'><h5>Admin</h5></a></li>
+					</ul>
+        		</div>
+        			<header>
+						<center><h1>HAMSTR</h1></center>
+					</header>
+
+        		<div id="maincontent" class="col-md-10">
+					{% block content %}
+					{% endblock %}
+				</div>
+        	</div>
+    	</div>
+		
+	</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="loading">
+	<div class='row' align='center'>
+		<div class="col-sm-12"><h2>Job in progress<br><br></h2></div>
+	</div>
+
+	<div class='row' align='center'>
+		<div class="col-sm-12">
+			<p> Your user key is:</p>
+			<strong><h2 class="text-success">{{random_key}}</h2></strong>
+			<p>
+				Please take note of this so that you may enter it to retrieve your job or to check on its progress.<br>
+				If you provided an email address, you will be mailed an alert when your job is complete with a reminder of your key.<br><br>
+				You may now close this tab.
+			</p>
+		</div>
+	</div>
+
+	<div class='row' align='center'>
+		<div class="col-sm-12"><img src="{% static 'align/img/Hamster_black.gif' %}" class="loadgif"/></div>
+	</div>
+
+
+	
+</div>
+
+{% endblock %}

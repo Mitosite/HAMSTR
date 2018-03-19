@@ -1,0 +1,38 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<form method="post" class= "post-form" enctype="multipart/form data" action="{% url 'retrieve' %}">
+    	{% csrf_token %}
+		<div class='row'>
+			<div class="col-sm-12">
+				<center><h2>Job retrieval</h2></center>
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class="col-sm-6">
+				<center><p>{{ inp_key }}</p></center>
+				<center><p>{{ retr_msg }}</p></center>
+			</div>
+
+
+			<div class="col-sm-4">
+				<center>{{ form.input_key }}</center>
+			</div>
+
+			<div class="col-sm-2">
+				<input type="submit" name="title" value="Retrieve job"/>
+			</div>
+
+		</div>
+</form>
+
+<div class='row'>
+			<div class="col-sm-12">
+				<!--<center><h2>{{inp_key}}</h2></center>-->
+			</div>
+		</div>
+
+{% endblock %}

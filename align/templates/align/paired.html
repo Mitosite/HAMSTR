@@ -1,0 +1,51 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id='singleupload'>
+	<div class='row'>
+		<div class="col-md-12">
+			<center><h2>Paired-end reads upload</h2></center>
+			<br>
+			<br>
+			<form method="post" enctype="multipart/form-data" action="{% url 'paired' %}">
+				{% csrf_token %}
+				<ul>
+					<li><center><p>For information on how to use HAMSTR, pease visit the <a href='{% url 'tutorial' %}'>tutorial</a>.<br></p></center></li>
+					<li><center><p>Fields marked with an asterisk (*) are mandatory.</p></center></li>
+					<hr>
+					<li>{{ upload_message }}<div align='center'>{{ form.readsfile1 }}</div></li>
+					<li><div align='center'>{{ form.readsfile2 }}</div></li>
+					<hr>
+					<li><p>Adapters for uploaded reads*:</p><center>{{ form.adapters }}</center></li>
+					<hr>
+	    			<li><p>Email*:</p><center>{{ form.user_email }}</center></li>
+	    			<hr>
+	    			<li><p>Step 1 Aligners*:</p><center></center>
+	    				<div class='row'>
+							<div class="col-sm-5"align = "right"><br></div>
+							<div class="col-sm-3" align="left">{{ form.s1_aligners }}</div>
+							<div class="col-sm-4"></div>
+						</div>	    				
+	    			</li>
+	    			<hr>
+	    			<li><p>Step 2 Aligners*:</p><center></center>
+	    				<div class='row'>
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3" align="left">{{ form.s2_aligners }}</div>
+							<div class="col-sm-4"></div>
+						</div>
+					</li>
+	    			<hr>
+				</ul>
+    			<center><input type="submit" name="submit" value="Start job"></center>
+    			<br>
+				<br>
+				<br>
+			</form>
+		</div>
+	</div>	
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<link rel="shortcut icon" type="image/png" href="img/Hamster_black_icon.ico">
+		<title>Mitochondrial genome aligner</title>
+		<meta charset="utf-8" />
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'align/css/bootstrap.min.css' %}" type = "text/css"/>
+		<link rel="stylesheet" href="{% static 'align/css/additions.css' %}" type = "text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body class="body" style="background-colour:#ffffff"> <!--background colour white for now-->
+	<div id="wrapper"> <!-- wrapper is for sidebar -->
+
+		{% include 'align/includes/sidebar.html' %}
+
+		<div id="page-content-wrapper">
+            <div class="container-fluid">
+
+				<div class="row"> <!-- Just to add some space at the top of the page -->
+					<div class="col-md-8">
+					</div>
+				</div>
+
+				<div class="row">
+			  		<div class="col-md-2" style="background-color:#000000">
+			  			<center>
+			  				<a href="#">
+			  					<img src="{% static 'align/img/Hamster_white.png' %}" alt="Return to main page" height="125px" width="125px"/>
+			  				</a>
+			  			</center>
+			  		</div>
+
+			  		<div class="col-md-2">
+			  			
+			  		</div>
+
+			  		<div class="col-md-4">
+			  			<center>
+							<h1>HAMSTR</h1>
+						</center>
+			  		</div>
+
+			  		<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+			  		
+			  		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+	<!--<div id='sidebar' style="background-colour:#000000" >
+
+		{% include 'align/includes/sidebar2.html' %}
+
+	</div>-->
+
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+
+
+  		<!--{% include 'align/includes/testinclude.html' %}-->
+	
+	</body>
+</html>

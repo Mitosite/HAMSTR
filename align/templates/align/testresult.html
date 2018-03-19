@@ -1,0 +1,228 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="Results">
+	<div class='row' align='center'>
+		<div class="col-sm-12">
+			<h2>Results</h2><br><br>
+		</div>
+	</div>
+
+
+	<div class='row' align='center'>
+		<div class="col-sm-12">
+			<h3>Job key: {{ inp_key }}<br><br></h3>
+		</div>
+	</div>
+
+	<div id='summary' class='summary'>
+		<hr>
+		<div class='row'>
+			<div class='col-sm-1'>
+			</div>
+			<div class="col-sm-10">
+			 <!--<table>
+			  <tr>
+				<th style='background-color: #575669; color: #ffffff' align='center'>STEP 1</th>
+				<th style='background-color: #575669; color: #ffffff' align='center'>STEP 2</th>
+			  </tr>
+			  <tr>
+				<td>{{ txtline7 }}</td>
+				<td><br></td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td><br></td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline8 }}</td>
+				<td>{{ txtline13 }}</td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline9 }}</td>
+				<td><br></td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline10 }}</td>				
+				<td>{{ txtline14 }}</td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline11 }}</td>
+				<td>{{ txtline15 }}</td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline12 }}<br></td>
+				<td>{{ txtline16 }}</td>
+			  </tr>
+			  <tr>
+				<td>{{ txtline13 }}</td>
+				<td>{{ txtline17 }}</td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td><br></td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td>{{ txtline18 }}</td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td>{{ txtline19 }}</td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td>{{ txtline20 }}</td>
+			  </tr>
+			  <tr>
+				<td><br></td>
+				<td>{{ txtline21 }}</td>
+			  </tr>
+			</table>-->
+
+			<ul style="width:100%">
+				<li style='background-color: #575669; color: #ffffff'><strong>JOB DETAILS</strong></li>
+				<li><br></li>
+				<li>{{ txtline1 }}</li>
+				<li>{{ txtline2 }}</li>
+				<li>{{ txtline3 }}</li>
+				<li>{{ txtline4 }}</li>
+				<li>{{ txtline5 }}</li>
+				<li>{{ txtline6 }}</li>
+				<li><br></li>
+				<li>
+					<table style='width:100%'>
+					  <tr>
+						<th style='background-color: #575669; color: #ffffff' align='center'>STEP 1</th>
+						<th style='background-color: #575669; color: #ffffff' align='center'>STEP 2</th>
+					  </tr>
+					  <tr>
+						<td><br></td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline7 }}</td>
+						<td><strong>{{ txtline22 }}</strong></td>
+					  </tr>
+					  <tr>
+						<td><br></td>
+						<td>{{ txtline23 }}</td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline8 }}</td>
+						<td>{{ txtline24 }}</td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline9 }}</td>
+						<td>{{ txtline25 }}</td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline10 }}</td>				
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline11 }}</td>
+						<td><strong>{{ txtline26 }}</strong></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline12 }}<br></td>
+						<td>{{ txtline27 }}</td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline13 }}</td>
+						<td>{{ txtline28 }}</td>
+					  </tr>
+					  <tr>
+						<td><br></td>
+						<td>{{ txtline29 }}</td>
+					  </tr>					  
+					  <tr>
+						<td><strong>{{ txtline14 }}</strong></td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline15 }}</td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline16 }}</td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline17 }}</td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td><br></td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td><strong>{{ txtline18 }}</strong></td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline19 }}</td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline20 }}</td>
+						<td><br></td>
+					  </tr>
+					  <tr>
+						<td>{{ txtline21 }}</td>
+						<td><br></td>
+					  </tr>					  					  
+					</table>					
+				</li>
+			</ul
+
+			<div class='col-sm-1'>
+			</div>
+		</div>
+		<hr>
+	</div>
+	
+
+	<div class='row' align='center'>
+		<div class="col-sm-12">
+			<p>If an ideogram you expected to has not loaded, please try again later after recieving the confirmation email.<br><br></p>
+			<a href="{% static "align/uploads/" %}{{ inp_key }}/output.zip">Click here</a> to download relevent files. <br><br>
+		</div>
+	</div>
+
+	<div class='row' align='center'>
+		<div class="col-sm-12">
+			<div id="ideograms" class="ideograms">					
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr1mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr2mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr3mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr4mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr5mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr6mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr7mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr8mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr9mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr10mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr11mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr12mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr13mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr14mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr15mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr16mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr17mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr18mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr19mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr20mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr21mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chr22mitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chrXmitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chrYmitograph.png" height="600px"/>
+				<img src="{% static "align/uploads/" %}{{ inp_key }}/chrMmitograph.png" height="600px"/>	
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

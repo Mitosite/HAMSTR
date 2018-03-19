@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'align/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'align/css/simple-sidebar.css' %}" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+    <link href="{% static 'align/css/scrolling-nav.css' %}" rel="stylesheet">
+
+    <!-- Extra bits to keep sizing in check -->
+    <link href="{% static 'align/css/tweaking.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href='{% url 'choose' %}'><img src="{% static 'align/img/Hamster_white.png' %}" alt="Return to main page" class="sitelogo"/></a>
+                </li>
+                <li>
+                    <a href='{% url 'retrieve' %}'>Retrieve Job</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">                
+                <!--<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>-->
+
+                  <body id="page-top">
+
+                    <!-- Navigation -->
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+                      <div class="container">
+                        <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                          <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+
+                <div id="maincontent" class="col-md-10">
+					{% block content %}
+					{% endblock %}
+				</div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'align/js/jquery.min.js' %}"></script>
+    <script src="{% static 'align/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'align/js/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{% static 'align/js/scrolling-nav.js' %}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

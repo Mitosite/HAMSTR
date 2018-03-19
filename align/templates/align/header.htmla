@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = en>
+	<head>
+		<title>Mitochondrial genome aligner</title>
+		<meta charset="utf-8" />
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'align/css/bootstrap.min.css' %}" type = "text/css"/>
+		<link rel="stylesheet" href="{% static 'align/css/additions.css' %}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body class="body" style="background-colour:#ffffff"> <!--background colour white for now-->
+
+	<div id="wrapper">
+
+	{% include 'align/includes/sidebar.html' %}
+
+		<div id="page-content-wrapper">
+            <div class="container-fluid">
+				<div class="row"> <!-- Just to add some space at the top of the page -->
+					<div class="col-md-8">
+					</div>
+				</div>
+
+				<div class="row">
+			  		<div class="col-md-2">
+			  			<center>
+			  				<a href="#">
+			  					<img src="{% static 'align/img/Hamster_black.png' %}" alt="Return to main page" height="125px" width="125px"/>
+			  				</a>
+			  			</center>
+			  		</div>
+
+			  		<div class="col-md-2">
+			  			
+			  		</div>
+
+			  		<div class="col-md-4">
+			  			<center>
+							<h1>HAMSTR</h1>
+						</center>
+			  		</div>
+
+			  		<div class="col-md-4">
+			  		
+			  		</div>
+
+			  		
+
+			  		{% block content %}
+			  		{% endblock %}
+
+					<!--<div class="container-fluid">
+			  			{% include 'align/includes/testinclude.html' %}-->
+					</div>
+			</div>
+        </div>
+        <!-- /#page-content-wrapper -->
+	</body>
+</html>

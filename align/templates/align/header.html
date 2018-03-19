@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'align/img/Hamster_black.png' %}">
+
+    <title>HAMSTR</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'align/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'align/css/simple-sidebar.css' %}" rel="stylesheet">
+
+    <!-- Extra bits to keep text sizing in check -->
+    <link href="{% static 'align/css/tweaking.css' %}" rel="stylesheet">
+
+    <!--Style for overlay-->
+    <style>
+    #overlay {
+        position: fixed; display: none; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 2;
+    }
+
+    #text{
+        position: absolute; top: 50%; left: 50%; font-size: 5vw; color: white; transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%);
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+                <li>
+                    <a href='{% url 'choose' %}'><h5>Return to main page</h5></a>
+                </li>
+                <li>
+                    <a href='{% url 'retrieve' %}'><h5>Retrieve Job</h5></a>
+                </li>
+                <li>
+                    <a href='{% url 'tutorial' %}'><h5>Tutorial</h5></a>
+                </li>
+                <li>
+                    <a href='{% url 'programmes' %}'><h5>Programmes</h5></a>
+                </li>
+                <li>
+                    <a href='{% url 'about' %}'><h5>About</h5></a>
+                </li>
+                <li>
+                    <a href='{% url 'admin:index' %}'><h5>Admin</h5></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid"> 
+
+            	<body id="page-top">
+
+                    <!-- Navigation -->
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+                      <div class="container">
+                      	<a class="navbar-brand js-scroll-trigger" href="{% url 'choose' %}"><img src="{% static 'align/img/Hamster_white.png' %}" alt="Return to main page" class="sitelogo"/></a>
+                      	<a class="navbar-brand js-scroll-trigger" href="{% url 'choose' %}"><img src="{% static 'align/img/HAMSTR1_3.png' %}" class="siteheader"/></a>
+                        <a href="#menu-toggle" class="btn btn-secondary " id="menu-toggle">Menu</a>
+                        </button>
+                      </div>
+                    </nav>
+
+                <div id="maincontent" class="col-md-10">
+                 
+                	<br><br><br><br><br>
+					{% block content %}
+					{% endblock %}
+                    </div>
+				</div>                           
+            </div>
+            
+        </div>
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'align/js/jquery.min.js' %}"></script>
+    <script src="{% static 'align/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'align/js/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="{% static 'align/js/scrolling-nav.js' %}"></script>   
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <div class="footer">
+        <a href='{% url 'about' %}' >Contact the developers</a><a style="color: #ffffff"> | 2018, Imperial College London</a>
+    </div>
+</body>
+
+</html>

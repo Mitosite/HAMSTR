@@ -1,0 +1,79 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="choice_page">
+	<div class='row'>
+		<div class="col-sm-12"><center><h2>Welcome to HAMSTR!</h2><br></center></div>
+	</div>	
+
+	<div class='row'>
+		<div class="col-sm-12"><center><h3>Want to know how to use HAMSTR? Try our <a href='{% url 'tutorial' %}'>tutorial</a>.<br><br></h3></center></div>
+	</div>
+
+	<div class='row'>
+		<div class="col-sm-12"><center><h4>Please select your read type:<br><br></h4></center></div>
+	</div>
+	
+<hr>	
+	<div id="buttons" class="row">
+		<div class="col-md-12" id="test">
+			<center><div class="row">
+				
+				<div class="col-sm-6" align='right'>
+					<a href='{% url 'single' %}'>
+						<img src="{% static 'align/img/s_end_reads_1_2.png' %}" alt="Process single end reads" class="singlebutton"/>
+					</a>
+				</div>
+
+				<div class="col-sm-6" align='left'>
+					<a href='{% url 'paired' %}' >
+						<img src="{% static 'align/img/d_end_reads_2_2.png' %}" alt="Process paired end reads" class="pairedbutton"/>
+					</a>
+				</div>
+			</div></center>
+		</div>
+	</div>
+<hr>
+
+	<!--<div id="job_search">
+		<form name='job_search_form' onSubmit='return false'>
+			<div class='row'>
+				<div class="col-sm-6">
+				<p> Input key to retrieve job: </p>
+				</div>
+
+				<div class="col-sm-6">
+				<input type='text' name='job_url_input' placeholder='e.g. abc123def4'/>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class="col-sm-12">
+					<button onClick=job_search(document.job_search_form.job_url_input.value)>
+						Retrieve job
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	
+
+	
+	<div class='row'>
+		<div class="col-sm-12" id="uploadtest">
+			<center><a href={% url 'uploadtest' %}><h1>Upload test</h1></a></center>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class="col-sm-12" id="uploadtest">
+			<center><a href={% url 'testresult' %}><h1>Sample results page</h1></a></center>
+		</div>
+	</div>
+
+</div>-->
+
+{% endblock %}

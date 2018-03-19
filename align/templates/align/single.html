@@ -1,0 +1,67 @@
+{% extends "align/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="overlay">
+  <div id="text" align="center">Checking file format, please keep this tab open.<br><center><img src="{% static 'align/img/Hamster_white.gif' %}" class="checkgif"/></center>
+  </div>
+</div>
+
+<div id='singleupload'>
+	<div id='row'>
+		<div class="col-md-12">
+			<center><h2>Single-end reads upload</h2></center>
+			<br>
+			<br>
+			<form method="post" enctype="multipart/form-data" action="{% url 'single' %}">
+				{% csrf_token %}
+				<ul>
+					<li><center><p>For information on how to use HAMSTR, pease visit the <a href='{% url 'tutorial' %}'>tutorial</a>.<br></p></center></li>
+					<li><center><p>Fields marked with an asterisk (*) are mandatory.</p></center></li>
+					<hr>
+					<li>{{ upload_message }}*<div align='center'>{{ form.readsfile }}</div></li>
+					<hr>
+					<li><p>Adapters*:</p><center>{{ form.adapter }}</center></li>
+					<hr>
+	    			<li><p>Email*:</p><center>{{ form.user_email }}</center></li>
+	    			<hr>
+	    			<li><p>Step 1 Aligners*:</p><center></center>
+	    				<div class='row'>
+							<div class="col-sm-5"align = "right"><br></div>
+							<div class="col-sm-3" align="left">{{ form.s1_aligners }}</div>
+							<div class="col-sm-4"></div>
+						</div>	    				
+	    			</li>
+	    			<hr>
+	    			<li><p>Step 2 Aligners*:</p><center></center>
+	    				<div class='row'>
+							<div class="col-sm-5"></div>
+							<div class="col-sm-3" align="left">{{ form.s2_aligners }}</div>
+							<div class="col-sm-4"></div>
+						</div>
+					</li>
+	    			<hr>
+				</ul>
+				<br>
+				<br>
+				<br>
+    			<center><input type="submit" name="submit" value="Start job" onclick="on()"></center>
+    			<br>    			
+			</form>
+		</div>
+	</div>	
+</div>
+
+<!--overlay script-->
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+} 
+</script>
+
+{% endblock %}
